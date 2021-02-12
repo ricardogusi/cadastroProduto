@@ -7,32 +7,29 @@ import { Form, Row, Col, Button } from "react-bootstrap";
 export default function FormProdutos() {
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState(0);
-  const [produto,setProduto] = useState({Nome:'',Preco:0})
+  // const [produto,setProduto] = useState({Nome:'',Preco:0})
 
-  let handleChangeNome = (event) => {
-    let nome = event.target.value;
-    setNome(nome);
+  const handleChangeNome = (event) => {
+    const name = event.target.value;
+    setNome(name);
   };
 
-  let handleChangePreco = (event) => {
-    let preco = event.target.value;
-    setPreco(+preco);
+  const handleChangePreco = (event) => {
+    const price = event.target.value;
+    setPreco(+price);
   };
   
-    
-  
-    
-  let handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    let postData = async () => {
-      setProduto({Nome:nome, Preco:preco})
+    console.log(nome, preco);
+    const postData = async () => {
       const resp = await fetch("http://localhost:8081/api/produtos/", {
         method: "POST",
           headers: {
             Accept: "application/json",
             "Content-Type": "aplication/json",
           },
-          body: JSON.stringify(produto),
+          body: JSON.stringify({nome,preco}),
         });
         const content = await resp.json();
         console.log(resp);
@@ -42,10 +39,12 @@ export default function FormProdutos() {
     // window.alert("Produto cadastrado com sucesso!");
   };
   
+    
+  
   return (
     <div className="containerMain">
       <div>
-        <Form className="containerForm" onClick={handleSubmit}>
+        <Form className="containerForm" onSubmit={handleSubmit}>
           <Form.Group as={Row}>
             <Form.Label column sm={2}>
               Nome do Produto
