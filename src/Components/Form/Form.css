@@ -1,0 +1,18 @@
+.containerMain{
+    display: flex;
+    height: 600px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.containerForm {
+    width: 900px;
+}
+
+.containerForm button{
+    padding: 15px;
+    
+}
+

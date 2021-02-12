@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.containerMain{    
+    text-align: center;      
+    
+}
+
+.containerLista{    
+    justify-content: center;
+    padding-top: 40px;
+    
+}
+
+.listaHeader{
+       padding-bottom: 20px;           
+       
+}
+
+.lista, .listaHeader {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;            
+    line-height: 25px;    
+    width: 80vh;    
+    margin: auto;
+    
+    
+    
+    
+}
+
+.lista li{    
+    height: 40px;    
+    list-style: none;
+    border-radius: 5px;    
+    color: black;
+    margin-top: 10px;
+    
+    
+}
+
+.boxLinha{
+    background-color: greenyellow;
+    margin-bottom: 20px;
+    border: 3px, solid, gray;
+    
+    
+}
